@@ -8,3 +8,4 @@ dist/
 coverage/
 tmp/
 package-lock.json
+tests/golden/stage1-greenhouse-ready-for-review.json

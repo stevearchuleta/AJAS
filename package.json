@@ -16,13 +16,19 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "ci": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build",
+    "demo:stage1": "node --import tsx scripts/run-stage1-fixture.ts",
     "dev": "npm run dev --workspace @ajas/web",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --max-warnings=0",
     "test": "vitest run",
     "test:boundary": "vitest run tests/security",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:contract": "vitest run tests/contract",
+    "test:golden": "vitest run tests/golden",
+    "test:integration": "vitest run tests/integration",
+    "test:security": "vitest run tests/security",
+    "test:unit": "vitest run tests/unit",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc -p tsconfig.tools.json --noEmit",
     "verify:scaffold": "node scripts/verify-scaffold.mjs"
   },
   "devDependencies": {

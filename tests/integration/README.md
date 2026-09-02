@@ -1,3 +1,3 @@
 # Integration tests
 
-Integration fixtures enter this directory only after database and storage adapters are approved. No live service is called from Stage-0B tests.
+Prompt-5 integration tests use only deterministic local adapters and sanitized fixtures. They exercise the full fixture-only path, gate failures, zero-network behavior, idempotent replay, and audit-sink failure. Track A, Drive, ledgers, browsers, employer systems, and authenticated services are never dependencies.

@@ -10,7 +10,9 @@ The controlling specification is `AJAS_Handoff_FINAL_v1.0.md`. The controlling f
 
 ## Current stage
 
-This repository is a Prompt-4 Stage-0B scaffold candidate, not a passed Stage-0B release gate. The skeleton contains no live database, authentication, source, Google Drive, Gmail, payment, AI-provider, or employer integration.
+This repository contains the tested Prompt-5 fixture-only Stage-1 vertical slice. It is not a production release or a passed Stage-1 gate. The implementation contains no live database, authentication, source connector, Google Drive, Gmail, payment, AI-provider, or employer integration.
+
+The slice uses only synthetic applicant facts and a minimized saved public Greenhouse fixture. Its source policy is `MANUAL_ONLY`; runtime network access is disabled. `READY_FOR_REVIEW` is scoped to `STAGE1_VERTICAL_SLICE_TEST`, uses verified in-memory fixture byte readback, and explicitly reports `productionReady: false`.
 
 The Stage-0B gate still requires the approved migration, authentication, audit-event, preview, and sanitized audit-record evidence described by the controlling handoff. No preview or deployment is authorized by this scaffold.
 
@@ -26,8 +28,13 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
+npm run --silent demo:stage1
 ```
+
+Focused suites are also available as `test:unit`, `test:contract`, `test:integration`, `test:security`, and `test:golden`.
 
 ## Human submission boundary
 
 The web scaffold displays the boundary. Deterministic tests also verify the prohibited employer-action inventory and the absence of prohibited direct dependencies.
+
+Prompt 6 has not started. See `docs/product/STAGE_1_PROMPT_5_VERTICAL_SLICE_v0.1.md` for the implemented contract and known gaps.
