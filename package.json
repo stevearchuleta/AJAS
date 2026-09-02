@@ -1,0 +1,39 @@
+{
+  "name": "ajas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Human-controlled AJAS Personal application preparation system.",
+  "engines": {
+    "node": ">=22.16.0 <25",
+    "npm": ">=10.9.2 <12"
+  },
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "ci": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build",
+    "dev": "npm run dev --workspace @ajas/web",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run",
+    "test:boundary": "vitest run tests/security",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "verify:scaffold": "node scripts/verify-scaffold.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.16.5",
+    "eslint": "10.9.1",
+    "globals": "17.11.0",
+    "prettier": "3.9.6",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.68.0",
+    "vitest": "4.1.11"
+  }
+}

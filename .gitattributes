@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+AJAS_Handoff_FINAL_v1.0.md -text
+folder_structure.txt -text
+archive/** -text
+*.docx binary
+*.pdf binary

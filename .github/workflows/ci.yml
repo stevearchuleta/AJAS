@@ -1,0 +1,47 @@
+name: AJAS CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 22.16.0
+          - 24
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Use the declared npm version
+        run: npm install --global npm@10.9.2
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Verify scaffold
+        run: npm run verify:scaffold
+
+      - name: Run required checks
+        run: npm run ci

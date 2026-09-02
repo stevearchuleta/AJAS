@@ -1,0 +1,20 @@
+{
+  "name": "@ajas/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node ../../scripts/run-next.mjs build",
+    "dev": "node ../../scripts/run-next.mjs dev",
+    "start": "node ../../scripts/run-next.mjs start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5"
+  }
+}

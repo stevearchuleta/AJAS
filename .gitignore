@@ -1,0 +1,38 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+coverage/
+tmp/
+*.log
+Thumbs.db
+.DS_Store
+
+# LOCAL TOOLING AND EDITOR OUTPUT
+.idea/
+.vscode/*.local.json
+*.tsbuildinfo
+
+# SECRETS AND PRIVATE KEYS
+*credential*.json
+*credentials*.json
+*secret*.json
+*token*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+*.jks
+*.kdbx
+.npmrc
+.netrc
+.pgpass
+
+# HISTORICAL AND BINARY GOVERNANCE FILES REQUIRE EXPLICIT REVIEW BEFORE GIT INCLUSION
+archive/
+AJAS_Handoff_FINAL_v1.0.docx
+AJAS_Handoff_FINAL_v1.0.pdf
