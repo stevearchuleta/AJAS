@@ -1,0 +1,530 @@
+{
+  "applicationId": "application-synthetic-greenhouse-8073203",
+  "auditCommit": {
+    "batchSha256": "b198c09f9c3f93dece3b2b2a2153805c17a3377e4b60de0c54ee564733c89f58",
+    "eventCount": 5,
+    "status": "COMMITTED",
+    "store": "IN_MEMORY_FIXTURE_AUDIT"
+  },
+  "auditEvents": [
+    {
+      "action": "APPLICATION_STATE_TRANSITION",
+      "actorId": "ajas-fixture-runner",
+      "actorVersion": "1.0.0",
+      "authorizationRef": "prompt5-fixture-development-authorization-2026-08-30",
+      "classification": "SYNTHETIC",
+      "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+      "environment": "TEST_FIXTURE",
+      "eventId": "event_9740a1f95a9982b79974",
+      "evidenceRefs": [
+        "greenhouse-greenhouse-8073203-capture-20260830",
+        "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+        "a591b04639a6a0198db1415be375dcb586ed4cce47113aae2462b893617244ee"
+      ],
+      "failureCode": null,
+      "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+      "newState": "DISCOVERED",
+      "outcome": "SUCCESS",
+      "priorState": null,
+      "schemaVersion": "ajas.audit-event.v1",
+      "subjectId": "applicant-synthetic-001",
+      "targetId": "application-synthetic-greenhouse-8073203",
+      "timestampUtc": "2026-08-30T05:23:00Z",
+      "userId": "user-synthetic-001"
+    },
+    {
+      "action": "APPLICATION_STATE_TRANSITION",
+      "actorId": "ajas-fixture-runner",
+      "actorVersion": "1.0.0",
+      "authorizationRef": "prompt5-fixture-development-authorization-2026-08-30",
+      "classification": "SYNTHETIC",
+      "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+      "environment": "TEST_FIXTURE",
+      "eventId": "event_be31064de6471eae3eee",
+      "evidenceRefs": [
+        "facts-synthetic-fpa-001-v1",
+        "87eb5496e5850b6eb5524148b236f83ee8f8e768fc560ba80d6577536072cff2",
+        "req_us_work_location_compatible",
+        "req_us_full_time_work_authorization",
+        "req_7_years_relevant_finance",
+        "req_high_growth_saas_or_technology",
+        "req_business_partnering",
+        "req_financial_core",
+        "req_communication",
+        "req_spreadsheet_tools",
+        "req_presentation_tools",
+        "req_ai_fpa_automation",
+        "req_marketing_leadership_software_cloud",
+        "req_planning_platforms"
+      ],
+      "failureCode": null,
+      "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+      "newState": "SCREENED",
+      "outcome": "SUCCESS",
+      "priorState": "DISCOVERED",
+      "schemaVersion": "ajas.audit-event.v1",
+      "subjectId": "applicant-synthetic-001",
+      "targetId": "application-synthetic-greenhouse-8073203",
+      "timestampUtc": "2026-08-30T05:23:00Z",
+      "userId": "user-synthetic-001"
+    },
+    {
+      "action": "APPLICATION_STATE_TRANSITION",
+      "actorId": "ajas-fixture-runner",
+      "actorVersion": "1.0.0",
+      "authorizationRef": "synthetic-selection-authorization-001",
+      "classification": "SYNTHETIC",
+      "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+      "environment": "TEST_FIXTURE",
+      "eventId": "event_527edb3a9faa371948f2",
+      "evidenceRefs": [
+        "synthetic-selection-authorization-001",
+        "2927d152f7f9681cb3a0214d1be1a72574fe228a760b0035e9bfd0fd856e5da5"
+      ],
+      "failureCode": null,
+      "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+      "newState": "SELECTED",
+      "outcome": "SUCCESS",
+      "priorState": "SCREENED",
+      "schemaVersion": "ajas.audit-event.v1",
+      "subjectId": "applicant-synthetic-001",
+      "targetId": "application-synthetic-greenhouse-8073203",
+      "timestampUtc": "2026-08-30T05:23:00Z",
+      "userId": "user-synthetic-001"
+    },
+    {
+      "action": "APPLICATION_STATE_TRANSITION",
+      "actorId": "ajas-fixture-runner",
+      "actorVersion": "1.0.0",
+      "authorizationRef": "prompt5-fixture-development-authorization-2026-08-30",
+      "classification": "SYNTHETIC",
+      "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+      "environment": "TEST_FIXTURE",
+      "eventId": "event_1d51876f972ba6a25a87",
+      "evidenceRefs": [
+        "packet_ca6532fcee9db1130d51",
+        "artifact_089e203a549b204a6290",
+        "artifact_22fe8acd86c360f7e268",
+        "artifact_e161e56baa2fe6ca6191"
+      ],
+      "failureCode": null,
+      "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+      "newState": "PREPARING",
+      "outcome": "SUCCESS",
+      "priorState": "SELECTED",
+      "schemaVersion": "ajas.audit-event.v1",
+      "subjectId": "applicant-synthetic-001",
+      "targetId": "application-synthetic-greenhouse-8073203",
+      "timestampUtc": "2026-08-30T05:23:00Z",
+      "userId": "user-synthetic-001"
+    },
+    {
+      "action": "APPLICATION_STATE_TRANSITION",
+      "actorId": "ajas-fixture-runner",
+      "actorVersion": "1.0.0",
+      "authorizationRef": "prompt5-fixture-development-authorization-2026-08-30",
+      "classification": "SYNTHETIC",
+      "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+      "environment": "TEST_FIXTURE",
+      "eventId": "event_f70f3b499db0fdbf909d",
+      "evidenceRefs": [
+        "source-policy-greenhouse-greenhouse-test-v1",
+        "812ab01901e1bf510fc93148c4d2432cf9c230139dcaf6a22bded1e52d469a37",
+        "liveness-greenhouse-8073203-pre-ready-20260830T052253Z",
+        "ef5fe3a423d292e3fbc7851dbc67b4bf017c8196b4a61b9902453402c7e0c278",
+        "ca9a4c21706367f602272ed9584b95c50ae752e0d178257b6b35163da33911b3",
+        "a5599f6689d96bf2cbf189b0e82fdbd4032191610f06d48204399d7991b67878"
+      ],
+      "failureCode": null,
+      "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+      "newState": "READY_FOR_REVIEW",
+      "outcome": "SUCCESS",
+      "priorState": "PREPARING",
+      "schemaVersion": "ajas.audit-event.v1",
+      "subjectId": "applicant-synthetic-001",
+      "targetId": "application-synthetic-greenhouse-8073203",
+      "timestampUtc": "2026-08-30T05:23:00Z",
+      "userId": "user-synthetic-001"
+    }
+  ],
+  "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+  "executionMode": "FIXTURE_ONLY",
+  "humanBoundary": {
+    "employerActionPermitted": false,
+    "employerActionsPerformed": [],
+    "officialPostingUrl": "https://job-boards.greenhouse.io/greenhouse/jobs/8073203?gh_jid=8073203",
+    "officialPostingUrlPurpose": "SAVED_FIXTURE_SOURCE_PROVENANCE_ONLY",
+    "requiredHumanAction": "Review this synthetic fixture output inside AJAS only. Do not open an employer application form, contact the employer, upload files, make an attestation, or submit anything from this test result.",
+    "terminalState": "READY_FOR_REVIEW"
+  },
+  "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+  "inputSha256": "2927d152f7f9681cb3a0214d1be1a72574fe228a760b0035e9bfd0fd856e5da5",
+  "livenessDecision": {
+    "currentStatus": "NOT_CHECKED",
+    "decision": "VALID_SAVED_EVIDENCE",
+    "evidence": [
+      {
+        "ageSecondsAtEvaluation": 242,
+        "evidenceId": "liveness-greenhouse-8073203-intake-20260830T051858Z",
+        "observedAtUtc": "2026-08-30T05:18:58.000Z",
+        "observedStatus": "LIVE_AT_CAPTURE",
+        "phase": "INTAKE",
+        "rawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b"
+      },
+      {
+        "ageSecondsAtEvaluation": 7,
+        "evidenceId": "liveness-greenhouse-8073203-pre-ready-20260830T052253Z",
+        "observedAtUtc": "2026-08-30T05:22:53.000Z",
+        "observedStatus": "LIVE_AT_CAPTURE",
+        "phase": "PRE_READY",
+        "rawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b"
+      }
+    ]
+  },
+  "packetMetadata": {
+    "applicationId": "application-synthetic-greenhouse-8073203",
+    "artifactStore": "IN_MEMORY_FIXTURE_STORE",
+    "artifacts": [
+      {
+        "artifactId": "artifact_089e203a549b204a6290",
+        "bytes": 11192,
+        "filename": "posting-snapshot.json",
+        "kind": "POSTING_SNAPSHOT",
+        "mimeType": "application/json",
+        "readbackSha256": "ef5fe3a423d292e3fbc7851dbc67b4bf017c8196b4a61b9902453402c7e0c278",
+        "readbackStatus": "PASS",
+        "sha256": "ef5fe3a423d292e3fbc7851dbc67b4bf017c8196b4a61b9902453402c7e0c278"
+      },
+      {
+        "artifactId": "artifact_22fe8acd86c360f7e268",
+        "bytes": 6061,
+        "filename": "fit-explanation.json",
+        "kind": "FIT_EXPLANATION",
+        "mimeType": "application/json",
+        "readbackSha256": "ca9a4c21706367f602272ed9584b95c50ae752e0d178257b6b35163da33911b3",
+        "readbackStatus": "PASS",
+        "sha256": "ca9a4c21706367f602272ed9584b95c50ae752e0d178257b6b35163da33911b3"
+      },
+      {
+        "artifactId": "artifact_e161e56baa2fe6ca6191",
+        "bytes": 627,
+        "filename": "review-handoff.json",
+        "kind": "REVIEW_HANDOFF",
+        "mimeType": "application/json",
+        "readbackSha256": "a5599f6689d96bf2cbf189b0e82fdbd4032191610f06d48204399d7991b67878",
+        "readbackStatus": "PASS",
+        "sha256": "a5599f6689d96bf2cbf189b0e82fdbd4032191610f06d48204399d7991b67878"
+      }
+    ],
+    "authoritativeByteStoreUsed": false,
+    "commandSha256": "4b75268e8bb4c450f0121c146ed198571bfc77055e415fe99c4461b8e01fa9ce",
+    "employerActionsPerformed": [],
+    "executionMode": "FIXTURE_ONLY",
+    "factsSnapshotId": "facts-synthetic-fpa-001-v1",
+    "factsSnapshotSha256": "87eb5496e5850b6eb5524148b236f83ee8f8e768fc560ba80d6577536072cff2",
+    "factsSnapshotVersion": 1,
+    "inputSha256": "2927d152f7f9681cb3a0214d1be1a72574fe228a760b0035e9bfd0fd856e5da5",
+    "nextAutonomousAction": null,
+    "officialPostingUrl": "https://job-boards.greenhouse.io/greenhouse/jobs/8073203?gh_jid=8073203",
+    "officialPostingUrlPurpose": "SAVED_FIXTURE_SOURCE_PROVENANCE_ONLY",
+    "packetId": "packet_ca6532fcee9db1130d51",
+    "parserVersion": "greenhouse-minimized-fixture.v1.1.0",
+    "postingExternalId": "8073203",
+    "postingFixtureId": "greenhouse-greenhouse-8073203-capture-20260830",
+    "postingRawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+    "postingSavedSha256": "31802720c22f4c62d974f417f0c94bac377240ddb7d0da10b745fecd828201d9",
+    "productionReady": false,
+    "readinessScope": "STAGE1_VERTICAL_SLICE_TEST",
+    "rulesVersion": "ajas-rules.v1.1.0",
+    "runId": "run-synthetic-greenhouse-8073203-v1",
+    "schemaVersion": "ajas.packet-metadata.v1",
+    "sourcePolicyId": "source-policy-greenhouse-greenhouse-test-v1",
+    "sourcePolicySha256": "812ab01901e1bf510fc93148c4d2432cf9c230139dcaf6a22bded1e52d469a37",
+    "sourcePolicyVersion": 1,
+    "subjectId": "applicant-synthetic-001",
+    "templateVersion": "ajas-fixture-packet.v1.1.0",
+    "validation": {
+      "byteHashReadback": "PASS",
+      "completeness": "PASS_FOR_DECLARED_SCOPE",
+      "currentLiveness": "NOT_CHECKED",
+      "extractionScope": "REVIEWED_MINIMIZED_SCOPE_ONLY",
+      "finalSavedLiveness": "VALID_SAVED_EVIDENCE",
+      "status": "PASS",
+      "validatedAtUtc": "2026-08-30T05:23:00Z"
+    },
+    "validatorVersion": "ajas-validator.v1.1.0"
+  },
+  "productionReady": false,
+  "readinessScope": "STAGE1_VERTICAL_SLICE_TEST",
+  "schemaVersion": "ajas.stage1-vertical-slice-result.v1",
+  "screening": {
+    "disqualifiers": [],
+    "eligibility": "ELIGIBLE",
+    "fitDisposition": "PROCEED_WITH_NAMED_GAPS",
+    "namedGaps": [
+      "No approved fact resolves req_marketing_leadership_software_cloud",
+      "No approved fact resolves req_planning_platforms"
+    ],
+    "numericScoreUsed": false,
+    "requirements": [
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "ELIGIBILITY",
+        "label": "Applicant can work within the role's United States location scope",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-us-location-compatible-001",
+            "factId": "fact-synthetic-us-location-compatible-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_us_work_location_compatible",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_role_location_us"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "ELIGIBILITY",
+        "label": "Applicant has current full-time United States work authorization",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-work-auth-001",
+            "factId": "fact-synthetic-work-auth-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_us_full_time_work_authorization",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_us_full_time_work_auth"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "At least seven years in FP&A or Corporate Finance",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-relevant-finance-years-001",
+            "factId": "fact-synthetic-relevant-finance-years-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_7_years_relevant_finance",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_relevant_finance_years"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Experience in a high-growth SaaS or technology setting",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-industry-001",
+            "factId": "fact-synthetic-industry-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_high_growth_saas_or_technology",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_high_growth_saas_or_tech"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Significant business-partnering experience",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-partnering-001",
+            "factId": "fact-synthetic-partnering-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_business_partnering",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_business_partnering_required"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Forecasting, modeling, budgeting, and variance-analysis skills",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-financial-core-001",
+            "factId": "fact-synthetic-financial-core-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_financial_core",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_financial_core"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Strong cross-functional communication",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-communication-001",
+            "factId": "fact-synthetic-communication-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_communication",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_communication"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Mastery of at least one supported spreadsheet tool",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-productivity-tools-001",
+            "factId": "fact-synthetic-productivity-tools-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_spreadsheet_tools",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_office_tool_groups"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Mastery of at least one supported presentation tool",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-productivity-tools-001",
+            "factId": "fact-synthetic-productivity-tools-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_presentation_tools",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_office_tool_groups"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Uses AI tools to automate FP&A workflows",
+        "matchedEvidence": [
+          {
+            "approvedByRef": "fixture-approver-001",
+            "evidenceRef": "synthetic-evidence-ai-workflow-001",
+            "factId": "fact-synthetic-ai-workflow-001",
+            "factVersion": 1
+          }
+        ],
+        "materiality": "REQUIRED",
+        "namedGap": null,
+        "reasonCode": "APPROVED_FACT_MATCH",
+        "requirementId": "req_ai_fpa_automation",
+        "result": "MATCHED",
+        "sourceEvidenceRefs": [
+          "ev_ai_fpa_automation"
+        ]
+      },
+      {
+        "extractionConfidence": "HIGH",
+        "gate": "FIT",
+        "label": "Direct partnership with Marketing leadership in software or cloud",
+        "matchedEvidence": [],
+        "materiality": "PREFERRED",
+        "namedGap": "No approved fact resolves req_marketing_leadership_software_cloud",
+        "reasonCode": "NO_APPROVED_FACT",
+        "requirementId": "req_marketing_leadership_software_cloud",
+        "result": "GAP",
+        "sourceEvidenceRefs": [
+          "ev_marketing_software_partnering_preferred"
+        ]
+      },
+      {
+        "extractionConfidence": "MEDIUM",
+        "gate": "FIT",
+        "label": "Experience with an FP&A or marketing-planning platform",
+        "matchedEvidence": [],
+        "materiality": "PREFERRED",
+        "namedGap": "No approved fact resolves req_planning_platforms",
+        "reasonCode": "NO_APPROVED_FACT",
+        "requirementId": "req_planning_platforms",
+        "result": "GAP",
+        "sourceEvidenceRefs": [
+          "ev_planning_tools_preferred"
+        ]
+      }
+    ],
+    "unresolvedRequirements": [],
+    "userOverride": null
+  },
+  "sourcePolicyDecision": {
+    "decision": "ALLOW_FIXTURE_PROCESSING",
+    "networkAuthorized": false,
+    "operation": "PROCESS_SAVED_FIXTURE",
+    "policyId": "source-policy-greenhouse-greenhouse-test-v1",
+    "policyVersion": 1,
+    "reason": "EXACT_BOARD_POLICY_ALLOWS_OFFLINE_FIXTURE_ONLY",
+    "sourceKey": "GREENHOUSE:greenhouse"
+  },
+  "state": "READY_FOR_REVIEW",
+  "stateHistory": [
+    "DISCOVERED",
+    "SCREENED",
+    "SELECTED",
+    "PREPARING",
+    "READY_FOR_REVIEW"
+  ],
+  "subjectId": "applicant-synthetic-001"
+}

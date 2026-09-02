@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "ajas.approved-facts.v1",
+  "snapshotId": "facts-synthetic-fpa-001-v1",
+  "subjectId": "applicant-synthetic-001",
+  "version": 1,
+  "classification": "SYNTHETIC",
+  "approvedAtUtc": "2026-08-30T05:00:00Z",
+  "approvalRef": "fixture-approval-synthetic-001",
+  "facts": [
+    {
+      "factId": "fact-synthetic-us-location-compatible-001",
+      "factKey": "us_work_location_compatible",
+      "version": 1,
+      "value": true,
+      "status": "APPROVED",
+      "allowedUses": ["ELIGIBILITY", "FIT", "PACKET"],
+      "sensitivity": "SENSITIVE",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-us-location-compatible-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-work-auth-001",
+      "factKey": "authorized_to_work_us_full_time",
+      "version": 1,
+      "value": true,
+      "status": "APPROVED",
+      "allowedUses": ["ELIGIBILITY", "FIT", "PACKET"],
+      "sensitivity": "SENSITIVE",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-work-auth-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-relevant-finance-years-001",
+      "factKey": "years_relevant_fpa_or_corporate_finance_experience",
+      "version": 1,
+      "value": 9,
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-relevant-finance-years-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-industry-001",
+      "factKey": "industry_contexts",
+      "version": 1,
+      "value": ["HIGH_GROWTH_SAAS"],
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-industry-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-partnering-001",
+      "factKey": "business_partnering_experience",
+      "version": 1,
+      "value": true,
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-partnering-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-financial-core-001",
+      "factKey": "financial_core_skills",
+      "version": 1,
+      "value": ["FORECASTING", "FINANCIAL_MODELING", "BUDGETING", "VARIANCE_ANALYSIS"],
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-financial-core-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-communication-001",
+      "factKey": "communication_strength",
+      "version": 1,
+      "value": true,
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-communication-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-productivity-tools-001",
+      "factKey": "productivity_tools",
+      "version": 1,
+      "value": ["GOOGLE_SHEETS", "GOOGLE_SLIDES"],
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-productivity-tools-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    },
+    {
+      "factId": "fact-synthetic-ai-workflow-001",
+      "factKey": "ai_automation_fpa_workflows",
+      "version": 1,
+      "value": true,
+      "status": "APPROVED",
+      "allowedUses": ["FIT", "PACKET"],
+      "sensitivity": "STANDARD",
+      "effectiveFromUtc": "2026-08-30T05:00:00Z",
+      "effectiveToUtc": null,
+      "correctionHistory": [],
+      "provenance": {
+        "evidenceRef": "synthetic-evidence-ai-workflow-001",
+        "approvedByRef": "fixture-approver-001",
+        "approvedAtUtc": "2026-08-30T05:00:00Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "ajas.stage1-fixture-command.v1",
+  "executionMode": "FIXTURE_ONLY",
+  "environment": "TEST_FIXTURE",
+  "evaluatedAtUtc": "2026-08-30T05:23:00Z",
+  "userId": "user-synthetic-001",
+  "subjectId": "applicant-synthetic-001",
+  "actorId": "ajas-fixture-runner",
+  "actorVersion": "1.0.0",
+  "applicationId": "application-synthetic-greenhouse-8073203",
+  "runId": "run-synthetic-greenhouse-8073203-v1",
+  "correlationId": "correlation-synthetic-greenhouse-8073203-v1",
+  "idempotencyKey": "stage1-fixture:application-synthetic-greenhouse-8073203:v1",
+  "factsSnapshotId": "facts-synthetic-fpa-001-v1",
+  "factsSnapshotVersion": 1,
+  "factsSnapshotSha256": "87eb5496e5850b6eb5524148b236f83ee8f8e768fc560ba80d6577536072cff2",
+  "postingFixtureId": "greenhouse-greenhouse-8073203-capture-20260830",
+  "sourcePolicyId": "source-policy-greenhouse-greenhouse-test-v1",
+  "sourcePolicyVersion": 1,
+  "authorizationRef": "prompt5-fixture-development-authorization-2026-08-30",
+  "selectionAuthorizationRef": "synthetic-selection-authorization-001"
+}

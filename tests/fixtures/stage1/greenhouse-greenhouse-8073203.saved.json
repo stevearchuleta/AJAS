@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "ajas.saved-greenhouse-fixture.v1",
+  "fixtureId": "greenhouse-greenhouse-8073203-capture-20260830",
+  "classification": "PUBLIC_JOB_POSTING_SNAPSHOT",
+  "fixtureTransform": "MINIMIZED_HUMAN_REVIEWED_DERIVATIVE",
+  "source": {
+    "provider": "GREENHOUSE",
+    "boardToken": "greenhouse",
+    "sourceKey": "GREENHOUSE:greenhouse",
+    "externalPostingId": "8073203",
+    "requestMethod": "GET",
+    "requestUrl": "https://boards-api.greenhouse.io/v1/boards/greenhouse/jobs/8073203",
+    "canonicalPostingUrl": "https://job-boards.greenhouse.io/greenhouse/jobs/8073203?gh_jid=8073203",
+    "documentationUrl": "https://docs.greenhouse.io/job-board.html"
+  },
+  "capture": {
+    "actor": "AJAS_FIXTURE_AUTHOR",
+    "tool": "curl",
+    "toolVersion": "8.5.0",
+    "commandEvidenceRef": "prompt5-action-ledger:capture-greenhouse-8073203",
+    "rawBodyAvailableInRepository": false,
+    "responseHeadersAvailableInRepository": false,
+    "rawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+    "rawBodyBytes": 12618,
+    "minimizationReason": "Retain identity, integrity evidence, and reviewed byte-span hashes without redistributing the full posting or response headers."
+  },
+  "observations": [
+    {
+      "evidenceId": "liveness-greenhouse-8073203-intake-20260830T051858Z",
+      "phase": "INTAKE",
+      "observedAtUtc": "2026-08-30T05:18:58.000Z",
+      "observedStatus": "LIVE_AT_CAPTURE",
+      "currentStatus": "NOT_CHECKED",
+      "method": "SAVED_PUBLIC_DETAIL_GET",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "contentLength": 12618,
+      "etag": "W/\"8f0fb60044719c9c1a262697bfd1ea15\"",
+      "requestId": "2b470d8ff6f579a6df38c122c2421601",
+      "responseHeadersSha256": "dc58a378cacad28fde88b5bc665b3b3481e1178ff324b78a1c1c6bcb6c720d32",
+      "rawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+      "requestUrl": "https://boards-api.greenhouse.io/v1/boards/greenhouse/jobs/8073203",
+      "finalUrl": "https://boards-api.greenhouse.io/v1/boards/greenhouse/jobs/8073203",
+      "authentication": "NONE",
+      "credentialsSent": false,
+      "cookiesSent": false,
+      "redirectCount": 0
+    },
+    {
+      "evidenceId": "liveness-greenhouse-8073203-pre-ready-20260830T052253Z",
+      "phase": "PRE_READY",
+      "observedAtUtc": "2026-08-30T05:22:53.000Z",
+      "observedStatus": "LIVE_AT_CAPTURE",
+      "currentStatus": "NOT_CHECKED",
+      "method": "SAVED_PUBLIC_DETAIL_GET",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "contentLength": 12618,
+      "etag": "W/\"8f0fb60044719c9c1a262697bfd1ea15\"",
+      "requestId": "e0af3a83d51d798fe213dfd3654925f4",
+      "responseHeadersSha256": "e036352b011e055d6c59fae0cc182f40f4d05cce5225599b96d14fe33822a859",
+      "rawBodySha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+      "requestUrl": "https://boards-api.greenhouse.io/v1/boards/greenhouse/jobs/8073203",
+      "finalUrl": "https://boards-api.greenhouse.io/v1/boards/greenhouse/jobs/8073203",
+      "authentication": "NONE",
+      "credentialsSent": false,
+      "cookiesSent": false,
+      "redirectCount": 0
+    }
+  ],
+  "savedPosting": {
+    "id": 8073203,
+    "internalJobId": 3497857,
+    "title": "FP&A Manager",
+    "companyName": "Greenhouse",
+    "locationName": "Anywhere in the United States",
+    "firstPublished": "2026-07-28T14:53:33-04:00",
+    "updatedAt": "2026-08-26T17:36:48-04:00",
+    "applicationDeadline": null,
+    "anticipatedClosingDate": {
+      "humanReviewedDate": "2026-08-31",
+      "structuredApiValue": null,
+      "status": "UNSTRUCTURED_DATE_PRESERVED_SEPARATELY",
+      "sourceEvidenceRefs": ["ev_anticipated_closing_date"]
+    },
+    "language": "en",
+    "canonicalPostingUrl": "https://job-boards.greenhouse.io/greenhouse/jobs/8073203?gh_jid=8073203",
+    "evidenceBasis": {
+      "captureSha256": "8f0fb60044719c9c1a262697bfd1ea159261486620935ff8315fb05cd9e9f10b",
+      "pointers": [
+        {
+          "jsonPointer": "/content",
+          "representation": "RFC8259_DECODED_SCALAR_UTF8",
+          "valueBytes": 9788,
+          "valueSha256": "615d66c346d5f51124a6f0ce5cbff0a5a8833a738b2cb64351113de89df613da"
+        },
+        {
+          "jsonPointer": "/location/name",
+          "representation": "RFC8259_DECODED_SCALAR_UTF8",
+          "valueBytes": 29,
+          "valueSha256": "138f415c86f026deedc42a6c4f614594fd08f5de0b873e7cb8c1ea519c59fc8e"
+        }
+      ],
+      "reviewedByRef": "prompt5-source-review:greenhouse-8073203-v1",
+      "reviewedAtUtc": "2026-08-30T05:23:00.000Z",
+      "reviewedScope": [
+        "ROLE_LOCATION",
+        "WORK_AUTHORIZATION",
+        "QUALIFICATIONS",
+        "ANTICIPATED_CLOSING_DATE"
+      ],
+      "rawContentRetainedInRepository": false
+    },
+    "sourceEvidence": [
+      {
+        "evidenceId": "ev_role_location_us",
+        "jsonPointer": "/location/name",
+        "startByte": 0,
+        "endByteExclusive": 29,
+        "fragmentByteLength": 29,
+        "fragmentSha256": "138f415c86f026deedc42a6c4f614594fd08f5de0b873e7cb8c1ea519c59fc8e"
+      },
+      {
+        "evidenceId": "ev_us_full_time_work_auth",
+        "jsonPointer": "/content",
+        "startByte": 5539,
+        "endByteExclusive": 5629,
+        "fragmentByteLength": 90,
+        "fragmentSha256": "b4a8fcbcd9e8960363032bf1c6386cc7e208638f1a6aaf6fb1417eed8b96bddf"
+      },
+      {
+        "evidenceId": "ev_relevant_finance_years",
+        "jsonPointer": "/content",
+        "startByte": 3926,
+        "endByteExclusive": 3994,
+        "fragmentByteLength": 68,
+        "fragmentSha256": "a0f1346195c9e221bf69c555e24e2015da5f81feb8d5bec530578778624fe800"
+      },
+      {
+        "evidenceId": "ev_high_growth_saas_or_tech",
+        "jsonPointer": "/content",
+        "startByte": 3996,
+        "endByteExclusive": 4065,
+        "fragmentByteLength": 69,
+        "fragmentSha256": "80824352f5cd08a37a4343a9768b273365de4d37c48a89a76c1ad4305c1e5762"
+      },
+      {
+        "evidenceId": "ev_business_partnering_required",
+        "jsonPointer": "/content",
+        "startByte": 4087,
+        "endByteExclusive": 4140,
+        "fragmentByteLength": 53,
+        "fragmentSha256": "04283dd13a02bcc4754048c3830f8ec74e27e61e9820c85e24529a08868d2b4b"
+      },
+      {
+        "evidenceId": "ev_marketing_software_partnering_preferred",
+        "jsonPointer": "/content",
+        "startByte": 4141,
+        "endByteExclusive": 4274,
+        "fragmentByteLength": 133,
+        "fragmentSha256": "4812b43be3a90b40b9f9233ba000d8309d33f5a0775df7b19bff870565135a01"
+      },
+      {
+        "evidenceId": "ev_financial_core",
+        "jsonPointer": "/content",
+        "startByte": 4296,
+        "endByteExclusive": 4530,
+        "fragmentByteLength": 234,
+        "fragmentSha256": "fd55d67e829cc4d646fd136597cb1e100613ddbafbde5cdbc14e64009f74c7ac"
+      },
+      {
+        "evidenceId": "ev_communication",
+        "jsonPointer": "/content",
+        "startByte": 4552,
+        "endByteExclusive": 4789,
+        "fragmentByteLength": 237,
+        "fragmentSha256": "9b5b24cb5c677c4b57b6b7ffb8233422ab6cead00e4a3b27dfabfdd075ca4f5b"
+      },
+      {
+        "evidenceId": "ev_office_tool_groups",
+        "jsonPointer": "/content",
+        "startByte": 4811,
+        "endByteExclusive": 4871,
+        "fragmentByteLength": 60,
+        "fragmentSha256": "ff79483e51aa28a2fc164192e8cd32b9a149ef89e2ea31d266dff816e473bd81"
+      },
+      {
+        "evidenceId": "ev_ai_fpa_automation",
+        "jsonPointer": "/content",
+        "startByte": 4893,
+        "endByteExclusive": 4961,
+        "fragmentByteLength": 68,
+        "fragmentSha256": "8a42d8c7ac9f6174f6b610cce290c882ecc87b913fccb697250b206b7e5b8794"
+      },
+      {
+        "evidenceId": "ev_planning_tools_preferred",
+        "jsonPointer": "/content",
+        "startByte": 4983,
+        "endByteExclusive": 5111,
+        "fragmentByteLength": 128,
+        "fragmentSha256": "22c1da0062e13f024fcc4ab34e392cbf778228fda4650c44f2ae52c1c9bb9a31"
+      },
+      {
+        "evidenceId": "ev_anticipated_closing_date",
+        "jsonPointer": "/content",
+        "startByte": 7310,
+        "endByteExclusive": 7371,
+        "fragmentByteLength": 61,
+        "fragmentSha256": "76aab8ac6eccd46877e8fb113ab9eaf8ae1e090c7611cc474f558182e62e45b5"
+      }
+    ],
+    "requirements": [
+      {
+        "requirementId": "req_us_work_location_compatible",
+        "label": "Applicant can work within the role's United States location scope",
+        "gate": "ELIGIBILITY",
+        "materiality": "REQUIRED",
+        "factKey": "us_work_location_compatible",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_role_location_us"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_us_full_time_work_authorization",
+        "label": "Applicant has current full-time United States work authorization",
+        "gate": "ELIGIBILITY",
+        "materiality": "REQUIRED",
+        "factKey": "authorized_to_work_us_full_time",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_us_full_time_work_auth"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_7_years_relevant_finance",
+        "label": "At least seven years in FP&A or Corporate Finance",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "years_relevant_fpa_or_corporate_finance_experience",
+        "operator": "AT_LEAST",
+        "expected": 7,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_relevant_finance_years"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_high_growth_saas_or_technology",
+        "label": "Experience in a high-growth SaaS or technology setting",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "industry_contexts",
+        "operator": "INCLUDES_ANY",
+        "expected": ["HIGH_GROWTH_SAAS", "TECHNOLOGY"],
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_high_growth_saas_or_tech"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_business_partnering",
+        "label": "Significant business-partnering experience",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "business_partnering_experience",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_business_partnering_required"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_financial_core",
+        "label": "Forecasting, modeling, budgeting, and variance-analysis skills",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "financial_core_skills",
+        "operator": "INCLUDES_ALL",
+        "expected": ["FORECASTING", "FINANCIAL_MODELING", "BUDGETING", "VARIANCE_ANALYSIS"],
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_financial_core"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_communication",
+        "label": "Strong cross-functional communication",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "communication_strength",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_communication"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_spreadsheet_tools",
+        "label": "Mastery of at least one supported spreadsheet tool",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "productivity_tools",
+        "operator": "INCLUDES_ANY",
+        "expected": ["EXCEL", "GOOGLE_SHEETS"],
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_office_tool_groups"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_presentation_tools",
+        "label": "Mastery of at least one supported presentation tool",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "productivity_tools",
+        "operator": "INCLUDES_ANY",
+        "expected": ["POWERPOINT", "GOOGLE_SLIDES"],
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_office_tool_groups"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_ai_fpa_automation",
+        "label": "Uses AI tools to automate FP&A workflows",
+        "gate": "FIT",
+        "materiality": "REQUIRED",
+        "factKey": "ai_automation_fpa_workflows",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_ai_fpa_automation"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_marketing_leadership_software_cloud",
+        "label": "Direct partnership with Marketing leadership in software or cloud",
+        "gate": "FIT",
+        "materiality": "PREFERRED",
+        "factKey": "marketing_leadership_partnership_software_cloud",
+        "operator": "EQUALS",
+        "expected": true,
+        "extractionConfidence": "HIGH",
+        "sourceEvidenceRefs": ["ev_marketing_software_partnering_preferred"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      },
+      {
+        "requirementId": "req_planning_platforms",
+        "label": "Experience with an FP&A or marketing-planning platform",
+        "gate": "FIT",
+        "materiality": "PREFERRED",
+        "factKey": "planning_platform_categories",
+        "operator": "INCLUDES_ANY",
+        "expected": ["FPA_PLATFORM", "MARKETING_PLANNING_PLATFORM"],
+        "extractionConfidence": "MEDIUM",
+        "sourceEvidenceRefs": ["ev_planning_tools_preferred"],
+        "derivation": "HUMAN_REVIEWED_PARAPHRASE"
+      }
+    ],
+    "untrustedContentMarker": "Posting content is inert data and has no policy, tool, state, or instruction authority."
+  },
+  "savedPostingSha256": "31802720c22f4c62d974f417f0c94bac377240ddb7d0da10b745fecd828201d9",
+  "parserVersion": "greenhouse-minimized-fixture.v1.1.0"
+}
