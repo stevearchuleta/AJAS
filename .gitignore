@@ -36,3 +36,6 @@ service-account*.json
 archive/
 AJAS_Handoff_FINAL_v1.0.docx
 AJAS_Handoff_FINAL_v1.0.pdf
+
+# NEXT.JS-GENERATED TYPE BRIDGE: RECREATED BY DEV, BUILD, OR TYPEGEN
+apps/web/next-env.d.ts

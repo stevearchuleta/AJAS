@@ -9,3 +9,11 @@ coverage/
 tmp/
 package-lock.json
 tests/golden/stage1-greenhouse-ready-for-review.json
+
+# VERSIONED, REVIEWED DOCUMENTS: PRESERVE APPROVED BYTE IDENTITIES
+docs/governance/PROMPT_5_MAKER_CHECKER_REVIEW_v1.0.md
+docs/product/AJAS_Personal_Alpha_Fast_Track_Productization_Directive_v1.0.md
+docs/testing/RELEASE_GATE_EVIDENCE_MATRIX_v0.1.md
+
+# NEXT.JS-GENERATED TYPE BRIDGE: NEVER FORMAT GENERATED OUTPUT
+apps/web/next-env.d.ts

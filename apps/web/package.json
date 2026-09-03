@@ -6,7 +6,7 @@
     "build": "node ../../scripts/run-next.mjs build",
     "dev": "node ../../scripts/run-next.mjs dev",
     "start": "node ../../scripts/run-next.mjs start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "node ../../scripts/run-next.mjs typegen && tsc --noEmit"
   },
   "dependencies": {
     "next": "16.3.3",
