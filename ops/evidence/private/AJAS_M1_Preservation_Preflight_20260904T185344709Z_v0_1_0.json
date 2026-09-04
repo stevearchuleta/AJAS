@@ -1,0 +1,383 @@
+{
+  "artifact_audits": [
+    {
+      "actual_sha256": "FC904C72AE779776A45079319B43D87AA38F33770208EB7CCC245FDE7BEAF736",
+      "artifact_type": "PYTHON_UTILITY",
+      "bytes": 49052,
+      "exists": true,
+      "expected_sha256": "FC904C72AE779776A45079319B43D87AA38F33770208EB7CCC245FDE7BEAF736",
+      "filename": "ajas_m1_readonly_reconcile_v0_1_0.py",
+      "hash_matches": true,
+      "high_confidence_secret_rule_names": [],
+      "is_file": true,
+      "private_metadata_present": true,
+      "source_path": "C:\\Users\\steve\\Downloads\\ajas_m1_readonly_reconcile_v0_1_0.py",
+      "target_relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_0.py"
+    },
+    {
+      "actual_sha256": "C2BA5134107BE5F10B0E474289486FD94D3ADF1A5C8133E4D667A587DD50E4C4",
+      "artifact_type": "PYTHON_UTILITY",
+      "bytes": 72967,
+      "exists": true,
+      "expected_sha256": "C2BA5134107BE5F10B0E474289486FD94D3ADF1A5C8133E4D667A587DD50E4C4",
+      "filename": "ajas_m1_readonly_reconcile_v0_1_1.py",
+      "hash_matches": true,
+      "high_confidence_secret_rule_names": [],
+      "is_file": true,
+      "private_metadata_present": true,
+      "source_path": "C:\\Users\\steve\\Downloads\\ajas_m1_readonly_reconcile_v0_1_1.py",
+      "target_relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_1.py"
+    },
+    {
+      "actual_sha256": "2ABFC081F41EE5D31494E9AE8A3D7CF7C037EC34BD6AACB0328D364D3D504815",
+      "artifact_type": "PYTHON_UTILITY",
+      "bytes": 88463,
+      "exists": true,
+      "expected_sha256": "2ABFC081F41EE5D31494E9AE8A3D7CF7C037EC34BD6AACB0328D364D3D504815",
+      "filename": "ajas_m1_readonly_reconcile_v0_1_2.py",
+      "hash_matches": true,
+      "high_confidence_secret_rule_names": [],
+      "is_file": true,
+      "private_metadata_present": true,
+      "source_path": "C:\\Users\\steve\\Downloads\\ajas_m1_readonly_reconcile_v0_1_2.py",
+      "target_relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_2.py"
+    },
+    {
+      "actual_sha256": "7BA149D2F3A2392FA95340AC4EFE03F073B17A8A8099FCE194C89F576DAAB4A9",
+      "artifact_type": "PRIVATE_MACHINE_EVIDENCE",
+      "bytes": 6430,
+      "exists": true,
+      "expected_sha256": "7BA149D2F3A2392FA95340AC4EFE03F073B17A8A8099FCE194C89F576DAAB4A9",
+      "filename": "AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json",
+      "hash_matches": true,
+      "high_confidence_secret_rule_names": [],
+      "is_file": true,
+      "private_metadata_present": true,
+      "source_path": "C:\\Users\\steve\\Downloads\\AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json",
+      "target_relative_path": "ops/evidence/private/AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json"
+    }
+  ],
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "GIT_WORKTREE",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS rev-parse --is-inside-work-tree",
+      "stderr": "",
+      "stdout": "true"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_ROOT",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS rev-parse --show-toplevel",
+      "stderr": "",
+      "stdout": "C:/Users/steve/Code/AJAS"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_BRANCH",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS branch --show-current",
+      "stderr": "",
+      "stdout": "main"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_HEAD",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS rev-parse HEAD",
+      "stderr": "",
+      "stdout": "df08693da3157504d7f4a10dcb840969950bd184"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_STATUS",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS status --porcelain=v1 --untracked-files=all",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_BASELINE_TAG_TARGET",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS rev-list -n 1 milestone0-complete",
+      "stderr": "",
+      "stdout": "df08693da3157504d7f4a10dcb840969950bd184"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_TRACKED_FILES",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS ls-files",
+      "stderr": "",
+      "stdout": ".editorconfig\n.env.example\n.gitattributes\n.github/dependabot.yml\n.github/workflows/ci.yml\n.gitignore\n.node-version\n.prettierignore\n.prettierrc.json\nAGENTS.md\nAJAS_Handoff_FINAL_v1.0.md\nREADME.md\napps/web/next.config.ts\napps/web/package.json\napps/web/src/app/api/health/route.ts\napps/web/src/app/layout.tsx\napps/web/src/app/page.tsx\napps/web/src/app/styles.css\napps/web/tsconfig.json\napps/worker/package.json\napps/worker/src/index.ts\napps/worker/tsconfig.json\ndocs/architecture/AJAS_Build_Schematic_ChatGPT_Sept_2_2026.png\ndocs/architecture/AJAS_Build_Schematic_ChatGPT_Sept_2_2026_final_draft.png\ndocs/architecture/AJAS_Build_Schematic_ChatGPT_Sept_2_2026_v2.png\ndocs/decisions/ADR-0001_RUNTIME_AND_PACKAGE_MANAGER_v1.0.md\ndocs/governance/PROMPT_5_MAKER_CHECKER_REVIEW_v1.0.md\ndocs/governance/STAGE_0A_APPROVAL_RECORD_v1.0.md\ndocs/governance/STAGE_0B_SCAFFOLD_MANIFEST_v0.1.md\ndocs/governance/STAGE_0_DURABLE_SPECIFICATION_SET_v0.1.md\ndocs/product/AJAS_Personal_Alpha_Fast_Track_Productization_Directive_v1.0.md\ndocs/product/PRODUCTION_READINESS_BACKLOG_v0.1.md\ndocs/product/STAGE_1_PROMPT_5_VERTICAL_SLICE_v0.1.md\ndocs/reports/PROMPT_5_IMPLEMENTATION_REPORT_v0.1.md\ndocs/sources/GREENHOUSE_GREENHOUSE_FIXTURE_POLICY_v0.1.md\ndocs/testing/RELEASE_GATE_EVIDENCE_MATRIX_v0.1.md\ndocs/testing/STAGE_1_PROMPT_5_TEST_AND_ROLLBACK_PLAN_v0.1.md\neslint.config.mjs\nfolder_structure.txt\ninfra/local/README.md\ninfra/preview/README.md\ninfra/production/README.md\ninfra/staging/README.md\npackage-lock.json\npackage.json\npackages/agents/README.md\npackages/config/README.md\npackages/core/package.json\npackages/core/src/human-boundary.ts\npackages/core/src/index.ts\npackages/core/src/stage1/approved-facts.ts\npackages/core/src/stage1/canonical-json.ts\npackages/core/src/stage1/contracts.ts\npackages/core/src/stage1/screening.ts\npackages/core/src/stage1/source-policy.ts\npackages/core/src/stage1/state-machine.ts\npackages/core/src/stage1/vertical-slice.ts\npackages/core/tsconfig.json\npackages/database/README.md\npackages/documents/README.md\npackages/observability/README.md\npackages/tools/README.md\npackages/ui/README.md\nscripts/Test-AJAS-Stage0B-Preflight.ps1\nscripts/run-next.mjs\nscripts/run-stage1-fixture.ts\nscripts/verify-scaffold.mjs\ntests/contract/scaffold-contract.test.ts\ntests/contract/stage1-fixture-contract.test.ts\ntests/e2e/README.md\ntests/fixtures/README.md\ntests/fixtures/stage1/approved-applicant-facts.synthetic.json\ntests/fixtures/stage1/greenhouse-greenhouse-8073203.saved.json\ntests/fixtures/stage1/greenhouse-greenhouse.source-policy.json\ntests/fixtures/stage1/vertical-slice-command.synthetic.json\ntests/golden/README.md\ntests/golden/stage1-greenhouse-ready-for-review.json\ntests/golden/vertical-slice-golden.test.ts\ntests/helpers/stage1-fixtures.ts\ntests/integration/README.md\ntests/integration/fixture-cli.test.ts\ntests/integration/fixture-vertical-slice.test.ts\ntests/security/no-prohibited-direct-dependencies.test.ts\ntests/security/stage1-boundaries.test.ts\ntests/unit/approved-facts.test.ts\ntests/unit/canonical-json.test.ts\ntests/unit/eligibility-fit.test.ts\ntests/unit/human-boundary.test.ts\ntests/unit/packet-state-audit.test.ts\ntests/unit/source-policy-liveness.test.ts\ntsconfig.base.json\ntsconfig.tools.json\nvitest.config.ts"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_ORIGIN_REMOTE",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS remote get-url origin",
+      "stderr": "",
+      "stdout": "https://github.com/stevearchuleta/AJAS.git"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_USER_NAME",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS config --get user.name",
+      "stderr": "",
+      "stdout": "Steve Archuleta"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_USER_EMAIL",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS config --get user.email",
+      "stderr": "",
+      "stdout": "stevearchuleta@me.com"
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_PROPOSED_BRANCH",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS branch --list milestone1-preserve-ops-evidence",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_PROPOSED_TAG",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS tag --list milestone1b-reconciliation-complete",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 0,
+      "label": "GIT_WORKTREE_LIST",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS worktree list --porcelain",
+      "stderr": "",
+      "stdout": "worktree C:/Users/steve/Code/AJAS\nHEAD df08693da3157504d7f4a10dcb840969950bd184\nbranch refs/heads/main"
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_SCRIPTS_OPS_AJAS_M1_READONLY_RECONCILE_V0_1_0_PY",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- scripts/ops/ajas_m1_readonly_reconcile_v0_1_0.py",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_SCRIPTS_OPS_AJAS_M1_READONLY_RECONCILE_V0_1_1_PY",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- scripts/ops/ajas_m1_readonly_reconcile_v0_1_1.py",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_SCRIPTS_OPS_AJAS_M1_READONLY_RECONCILE_V0_1_2_PY",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- scripts/ops/ajas_m1_readonly_reconcile_v0_1_2.py",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_OPS_EVIDENCE_PRIVATE_AJAS_M1_RECONCILIATION_20260904T174914819Z_V0_1_1_JSON",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- ops/evidence/private/AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_SCRIPTS_OPS_AJAS_M1_PRESERVATION_PREFLIGHT_V0_1_0_PY",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- scripts/ops/ajas_m1_preservation_preflight_v0_1_0.py",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_OPS_EVIDENCE_README_MD",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- ops/evidence/README.md",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_OPS_INCIDENTS_AJAS_INCIDENT_2026_09_03_POWERSHELL_NULL_WRAPPER_MD",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- ops/incidents/AJAS_INCIDENT_2026-09-03_POWERSHELL_NULL_WRAPPER.md",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_OPS_INCIDENTS_AJAS_INCIDENT_2026_09_04_AZURE_CLI_STDOUT_CONTAMINATION_MD",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- ops/incidents/AJAS_INCIDENT_2026-09-04_AZURE_CLI_STDOUT_CONTAMINATION.md",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "label": "GIT_CHECK_IGNORE_OPS_EVIDENCE_PRIVATE_AJAS_M1_PRESERVATION_PREFLIGHT_20260904T185344709Z_V0_1_0_JSON",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE -C C:\\Users\\steve\\Code\\AJAS check-ignore --no-index -v -- ops/evidence/private/AJAS_M1_Preservation_Preflight_20260904T185344709Z_v0_1_0.json",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 0,
+      "label": "V0_1_2_SELF_TEST",
+      "logical_command": "C:\\Users\\steve\\anaconda3\\python.exe C:\\Users\\steve\\Downloads\\ajas_m1_readonly_reconcile_v0_1_2.py --mode self-test",
+      "stderr": "",
+      "stdout": "SELF_TEST_CONTAMINATED_AZURE_STDOUT=PASS\nSELF_TEST_CONTAMINATED_TSV_BOOLEAN=PASS\nSELF_TEST_CONTAMINATED_NONNEGATIVE_INTEGER=PASS\nSELF_TEST_SCALAR_AMBIGUITY_FAIL_CLOSED=PASS\nSELF_TEST_SCALAR_TRAILING_CONTAMINATION_FAIL_CLOSED=PASS\nSELF_TEST_CONTAMINATED_PREFIX=\"cannot import name 'load_capability_host' from 'azure.ai.ml.entities._load_functions' (C:\\\\Users\\\\steve\\\\anaconda3\\\\Lib\\\\site-packages\\\\azure\\\\ai\\\\ml\\\\entities\\\\_load_functions.py)\"\nSELF_TEST_JSON_TYPE_VALIDATION=PASS\nSELF_TEST_TRAILING_CONTAMINATION_FAIL_CLOSED=PASS\nAJAS_READ_ONLY_RECONCILIATION_SELF_TEST_v0.1.2=PASS"
+    }
+  ],
+  "evidence_schema_version": "1.0",
+  "git_state": {
+    "baseline_tag": "milestone0-complete",
+    "baseline_tag_target": "df08693da3157504d7f4a10dcb840969950bd184",
+    "branch": "main",
+    "clean": true,
+    "git_baseline_passes": true,
+    "git_executable": "C:\\Users\\steve\\anaconda3\\Library\\mingw64\\bin\\git.EXE",
+    "git_root": "C:/Users/steve/Code/AJAS",
+    "git_root_matches": true,
+    "git_user_email_present": true,
+    "git_user_name_present": true,
+    "git_worktree": true,
+    "head": "df08693da3157504d7f4a10dcb840969950bd184",
+    "origin_remote": "https://github.com/stevearchuleta/AJAS.git",
+    "origin_remote_matches": true,
+    "proposed_branch_exists": false,
+    "proposed_tag_exists": false,
+    "proposed_worktree_path_exists": false,
+    "proposed_worktree_registered": false,
+    "repository": "C:\\Users\\steve\\Code\\AJAS",
+    "repository_exists": true,
+    "tracked_file_count": 93
+  },
+  "plan": {
+    "planned_target_paths": [
+      "scripts/ops/ajas_m1_readonly_reconcile_v0_1_0.py",
+      "scripts/ops/ajas_m1_readonly_reconcile_v0_1_1.py",
+      "scripts/ops/ajas_m1_readonly_reconcile_v0_1_2.py",
+      "ops/evidence/private/AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json",
+      "scripts/ops/ajas_m1_preservation_preflight_v0_1_0.py",
+      "ops/evidence/README.md",
+      "ops/incidents/AJAS_INCIDENT_2026-09-03_POWERSHELL_NULL_WRAPPER.md",
+      "ops/incidents/AJAS_INCIDENT_2026-09-04_AZURE_CLI_STDOUT_CONTAMINATION.md",
+      "ops/evidence/private/AJAS_M1_Preservation_Preflight_20260904T185344709Z_v0_1_0.json"
+    ],
+    "private_repository_required": true,
+    "proposed_branch": "milestone1-preserve-ops-evidence",
+    "proposed_tag": "milestone1b-reconciliation-complete",
+    "proposed_worktree_path": "C:\\Users\\steve\\Code\\AJAS-worktrees\\milestone1-preserve-ops-evidence",
+    "remote_push_deferred": true
+  },
+  "reconciliation_evidence_validation": {
+    "account_json_parse_status": "PARSED_WITH_PREFIX",
+    "account_warning_prefix_reproduced": true,
+    "azure_subscription_matches_handoff": true,
+    "container_registry_name_available": true,
+    "containerapp_extension_state": "INSTALLED",
+    "containerapp_extension_version": "1.3.0b5",
+    "json_parse_status": "PARSED",
+    "local_git_clean": true,
+    "reconciliation_status": "COMPLETE_BASELINE_CONFIRMED",
+    "resource_group_exists": false,
+    "utility_script_sha256": "C2BA5134107BE5F10B0E474289486FD94D3ADF1A5C8133E4D667A587DD50E4C4",
+    "utility_version": "0.1.1",
+    "valid": true,
+    "validation_errors": []
+  },
+  "run_utc": "2026-09-04T18:53:45.326645+00:00",
+  "safety": {
+    "azure_commands_attempted": false,
+    "billable_resources_created": false,
+    "git_mutations_attempted": false,
+    "github_network_commands_attempted": false,
+    "json_output_outside_repository": true,
+    "repository_files_written": false
+  },
+  "summary": {
+    "artifact_gate_passes": true,
+    "artifact_hash_mismatch_count": 0,
+    "git_baseline_passes": true,
+    "high_confidence_secret_finding_count": 0,
+    "missing_artifact_count": 0,
+    "preflight_status": "PASS",
+    "preservation_ready": true,
+    "private_metadata_artifact_count": 4,
+    "target_collision_count": 0,
+    "target_gate_passes": true,
+    "target_ignore_match_count": 0,
+    "target_ignore_unknown_count": 0,
+    "v0_1_2_self_test_markers_present": true
+  },
+  "target_audits": [
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_0.py"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_1.py"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "scripts/ops/ajas_m1_readonly_reconcile_v0_1_2.py"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "ops/evidence/private/AJAS_M1_Reconciliation_20260904T174914819Z_v0_1_1.json"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "scripts/ops/ajas_m1_preservation_preflight_v0_1_0.py"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "ops/evidence/README.md"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "ops/incidents/AJAS_INCIDENT_2026-09-03_POWERSHELL_NULL_WRAPPER.md"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "ops/incidents/AJAS_INCIDENT_2026-09-04_AZURE_CLI_STDOUT_CONTAMINATION.md"
+    },
+    {
+      "check_ignore_exit_code": 1,
+      "exists": false,
+      "ignore_rule": null,
+      "ignored": false,
+      "relative_path": "ops/evidence/private/AJAS_M1_Preservation_Preflight_20260904T185344709Z_v0_1_0.json"
+    }
+  ],
+  "utility": {
+    "mode": "inspect",
+    "name": "ajas_m1_preservation_preflight",
+    "script_sha256": "99F0A63A4525B566E1F7A711DE7518A2E9B730C099BD20879AF3BDF23D24A2F3",
+    "version": "0.1.0"
+  },
+  "v0_1_2_self_test": {
+    "exit_code": 0,
+    "label": "V0_1_2_SELF_TEST",
+    "logical_command": "C:\\Users\\steve\\anaconda3\\python.exe C:\\Users\\steve\\Downloads\\ajas_m1_readonly_reconcile_v0_1_2.py --mode self-test",
+    "stderr": "",
+    "stdout": "SELF_TEST_CONTAMINATED_AZURE_STDOUT=PASS\nSELF_TEST_CONTAMINATED_TSV_BOOLEAN=PASS\nSELF_TEST_CONTAMINATED_NONNEGATIVE_INTEGER=PASS\nSELF_TEST_SCALAR_AMBIGUITY_FAIL_CLOSED=PASS\nSELF_TEST_SCALAR_TRAILING_CONTAMINATION_FAIL_CLOSED=PASS\nSELF_TEST_CONTAMINATED_PREFIX=\"cannot import name 'load_capability_host' from 'azure.ai.ml.entities._load_functions' (C:\\\\Users\\\\steve\\\\anaconda3\\\\Lib\\\\site-packages\\\\azure\\\\ai\\\\ml\\\\entities\\\\_load_functions.py)\"\nSELF_TEST_JSON_TYPE_VALIDATION=PASS\nSELF_TEST_TRAILING_CONTAMINATION_FAIL_CLOSED=PASS\nAJAS_READ_ONLY_RECONCILIATION_SELF_TEST_v0.1.2=PASS"
+  }
+}
