@@ -1,11 +1,11 @@
 {
-  "name": "AJAS Personal",
+  "name": "AJAS — Automated Job Application System",
   "short_name": "AJAS",
-  "description": "Human-controlled application preparation",
+  "description": "Powered by Agentic AI. Guided by You. Built Through Trust.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#315b91",
+  "background_color": "#fffefb",
+  "theme_color": "#123158",
   "icons": [
     {
       "src": "/icon.svg",
