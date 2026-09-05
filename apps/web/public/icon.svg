@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">AJAS Personal</title>
+  <rect width="512" height="512" rx="112" fill="#315b91" />
+  <path
+    fill="#ffffff"
+    d="M135 392 232 120h48l97 272h-58l-21-64h-84l-21 64h-58Zm96-116h50l-25-79-25 79Z"
+  />
+</svg>

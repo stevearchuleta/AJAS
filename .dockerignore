@@ -1,0 +1,54 @@
+# VERSION-CONTROL METADATA
+.git
+.gitattributes
+
+# LOCAL DEPENDENCIES AND GENERATED OUTPUT
+node_modules
+**/node_modules
+.next
+**/.next
+dist
+**/dist
+coverage
+**/coverage
+tmp
+**/tmp
+*.log
+*.tsbuildinfo
+
+# LOCAL ENVIRONMENT AND CREDENTIAL MATERIAL
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+*.jks
+*.kdbx
+.npmrc
+.netrc
+.pgpass
+*credential*.json
+*credentials*.json
+*secret*.json
+*token*.json
+service-account*.json
+
+# NON-RUNTIME PROJECT MATERIAL
+.github
+archive
+docs
+infra
+ops
+tests
+*.md
+*.txt
+*.pdf
+*.docx
+
+# OPERATING-SYSTEM AND EDITOR OUTPUT
+.idea
+.vscode
+Thumbs.db
+.DS_Store
