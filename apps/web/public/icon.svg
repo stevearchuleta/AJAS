@@ -4,10 +4,9 @@
   role="img"
   aria-labelledby="title"
 >
-  <title id="title">AJAS Personal</title>
-  <rect width="512" height="512" rx="112" fill="#315b91" />
-  <path
-    fill="#ffffff"
-    d="M135 392 232 120h48l97 272h-58l-21-64h-84l-21 64h-58Zm96-116h50l-25-79-25 79Z"
-  />
+  <title id="title">AJAS — Automated Job Application System</title>
+  <rect width="512" height="512" rx="112" fill="#fffefb" />
+  <path fill="#123158" d="M62 382 205 120l61 88L322 84l128 298H62Z" />
+  <path fill="#fffefb" d="m177 329 45-76 36 51 62-116 70 141H177Z" />
+  <path fill="#315f3c" d="m176 382 70-98 45 66 40-59 69 91H176Z" />
 </svg>

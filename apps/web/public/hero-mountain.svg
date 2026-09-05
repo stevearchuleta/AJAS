@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract AJAS mountain and river landscape</title>
+  <desc id="desc">A programmatically authored mountain, pine forest, and river illustration created for the AJAS Milestone 1C product shell.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9e7f0"/>
+      <stop offset=".5" stop-color="#eef1ee"/>
+      <stop offset="1" stop-color="#f6efe2"/>
+    </linearGradient>
+    <linearGradient id="mountainBack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9bb0bd"/>
+      <stop offset="1" stop-color="#617989"/>
+    </linearGradient>
+    <linearGradient id="mountainFront" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#607c88"/>
+      <stop offset="1" stop-color="#344f5c"/>
+    </linearGradient>
+    <linearGradient id="forest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#456851"/>
+      <stop offset="1" stop-color="#234a38"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#afc9d4"/>
+      <stop offset="1" stop-color="#668d9d"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx=".18" cy=".18" r=".42">
+      <stop offset="0" stop-color="#fff7d8" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#fff5dc" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#fff5dc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity=".72"/>
+      <stop offset=".52" stop-color="#fff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#sunGlow)"/>
+
+  <path fill="#aebec6" opacity=".72" d="M0 518 155 386l105 92 138-165 132 117 113-164 133 158 99-88 129 142 92-95 105 113 95-72 200 194v282H0Z"/>
+  <path fill="url(#mountainBack)" d="M224 564 468 222l124 150 178-252 184 273 116-123 195 276 123-118 212 173v299H192Z"/>
+  <path fill="#f7f8f4" opacity=".9" d="m468 222 56 68 68 82-65-38-43 38-35-35-47 32Zm302-102 71 105 113 168-96-77-52 28-37-54-65 59Zm300 150 66 70 129 206-108-111-54 37-36-52-60 48Z"/>
+  <path fill="url(#mountainFront)" d="M0 642 188 485l98 97 118-121 117 108 142-134 137 133 139-99 118 91 154-140 144 129 115-83 200 169v265H0Z"/>
+
+  <path fill="url(#forest)" d="M0 607c145-69 293-57 438 14 132 65 249 42 379-12 136-57 287-36 412 31 112 60 235 63 371 13v247H0Z"/>
+
+  <g fill="#163d31" opacity=".92">
+    <path d="m83 608 30-76 30 76h-18l24 50h-72l25-50H83Z"/>
+    <path d="m152 625 24-62 24 62h-14l19 40h-58l20-40h-15Z"/>
+    <path d="m270 606 33-84 33 84h-19l27 55h-82l28-55h-20Z"/>
+    <path d="m360 631 25-63 25 63h-15l20 42h-60l20-42h-15Z"/>
+    <path d="m1120 603 32-81 32 81h-19l26 54h-79l27-54h-19Z"/>
+    <path d="m1218 626 25-65 26 65h-15l20 43h-62l21-43h-15Z"/>
+    <path d="m1320 596 36-91 36 91h-21l29 60h-88l30-60h-22Z"/>
+    <path d="m1435 621 28-71 28 71h-16l23 47h-68l23-47h-18Z"/>
+  </g>
+
+  <path fill="#d9e5e7" opacity=".82" d="M0 690c217-48 418-29 566 46 128 65 234 73 347 48 128-29 241-33 356 9 92 33 203 42 331 18v89H0Z"/>
+  <path fill="url(#river)" d="M692 630c-107 79-131 129-96 168 31 34 134 45 214 50 136 8 244 25 318 52H585c-53-31-71-67-53-108 22-52 75-103 160-162Z"/>
+  <path fill="#f8fbfa" opacity=".68" d="M658 701c-60 55-73 91-44 109 26 16 87 24 183 29-90-21-126-44-108-69 12-17 38-40 77-66-41 18-77 17-108-3Z"/>
+
+  <rect y="560" width="1600" height="340" fill="url(#mist)" opacity=".3"/>
+</svg>
