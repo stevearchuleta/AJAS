@@ -1,0 +1,567 @@
+name: Deploy Personal Alpha
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/deploy-personal-alpha.yml"
+      - ".dockerignore"
+      - "Dockerfile"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.base.json"
+      - "apps/web/**"
+      - "apps/worker/package.json"
+      - "packages/core/**"
+      - "scripts/run-next.mjs"
+  workflow_dispatch:
+
+permissions: {}
+
+env:
+  AZURE_CLIENT_ID: a5fecdc1-4c61-417d-b817-e600a64407a7
+  AZURE_TENANT_ID: 1178941d-589f-4cec-a2ed-2ad43265fc17
+  AZURE_SUBSCRIPTION_ID: efe2c2b2-d541-4b47-952d-e1af59db9910
+  AZURE_RESOURCE_GROUP: rg-ajas-personal-alpha-wus3
+  AZURE_ACR_NAME: acrajas59db9910
+  AZURE_ACR_SERVER: acrajas59db9910.azurecr.io
+  AZURE_CONTAINER_APP: ca-ajas-web-alpha
+  AZURE_CONTAINER_NAME: web
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  verify:
+    name: Verify deployable source
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out exact source commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Pin repository npm version
+        shell: bash
+        run: npm install --global npm@10.9.2
+
+      - name: Install exact dependency graph
+        shell: bash
+        run: npm ci
+
+      - name: Verify AJAS scaffold contract
+        shell: bash
+        run: npm run verify:scaffold
+
+      - name: Run complete AJAS CI gate
+        shell: bash
+        run: npm run ci
+
+  deploy:
+    name: Deploy personal-alpha
+    needs:
+      - verify
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: personal-alpha
+
+    permissions:
+      contents: read
+      id-token: write
+
+    concurrency:
+      group: deploy-personal-alpha
+      cancel-in-progress: false
+
+    steps:
+      - name: Check out exact deploy commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Sign in to Azure with GitHub OIDC
+        uses: azure/login@7ddb5af1ef8758cf1353cf3b42f940aee27ba21c # v3.0.2
+        with:
+          client-id: ${{ env.AZURE_CLIENT_ID }}
+          tenant-id: ${{ env.AZURE_TENANT_ID }}
+          subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          audience: api://AzureADTokenExchange
+
+      - name: Verify Azure login context
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          OBSERVED_SUBSCRIPTION="$(
+            az account show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --query id \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          OBSERVED_TENANT="$(
+            az account show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --query tenantId \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          test "$OBSERVED_SUBSCRIPTION" = "$AZURE_SUBSCRIPTION_ID"
+          test "$OBSERVED_TENANT" = "$AZURE_TENANT_ID"
+
+          echo "AZURE_OIDC_LOGIN_CONTEXT=PASS"
+
+      - name: Export the exact validated Git tree
+        id: source
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test "$GITHUB_SHA" = "$(git rev-parse HEAD)"
+
+          SOURCE_TAR="$RUNNER_TEMP/ajas-${GITHUB_SHA}.tar"
+          CONTEXT_DIR="$RUNNER_TEMP/ajas-context-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+
+          git archive \
+            --format=tar \
+            --output="$SOURCE_TAR" \
+            "$GITHUB_SHA"
+
+          mkdir -p "$CONTEXT_DIR"
+          tar -xf "$SOURCE_TAR" -C "$CONTEXT_DIR"
+
+          test -f "$CONTEXT_DIR/Dockerfile"
+          test -f "$CONTEXT_DIR/.dockerignore"
+          test -f "$CONTEXT_DIR/package.json"
+          test -f "$CONTEXT_DIR/package-lock.json"
+          test -f "$CONTEXT_DIR/apps/web/package.json"
+          test -f "$CONTEXT_DIR/scripts/run-next.mjs"
+
+          echo "context_dir=$CONTEXT_DIR" >> "$GITHUB_OUTPUT"
+          echo "SOURCE_COMMIT=$GITHUB_SHA"
+          echo "SOURCE_ARCHIVE=PASS"
+
+      - name: Build immutable image with ACR Tasks
+        id: build
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SHORT_SHA="${GITHUB_SHA:0:12}"
+          IMAGE_TAG="ajas-web:gha-${SHORT_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          IMAGE_REF="${AZURE_ACR_SERVER}/${IMAGE_TAG}"
+
+          DIGEST="$(
+            az acr build \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --registry "$AZURE_ACR_NAME" \
+              --image "$IMAGE_TAG" \
+              --file Dockerfile \
+              --platform linux/amd64 \
+              --timeout 1800 \
+              --no-logs \
+              --query "outputImages[0].digest" \
+              --output tsv \
+              --only-show-errors \
+              "${{ steps.source.outputs.context_dir }}"
+          )"
+
+          if [[ ! "$DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]; then
+            echo "Invalid ACR build digest." >&2
+            exit 1
+          fi
+
+          echo "image_tag=$IMAGE_TAG" >> "$GITHUB_OUTPUT"
+          echo "image_ref=$IMAGE_REF" >> "$GITHUB_OUTPUT"
+          echo "image_digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+          echo "ACR_BUILD=PASS"
+          echo "IMAGE_REF=$IMAGE_REF"
+          echo "IMAGE_DIGEST=$DIGEST"
+
+      - name: Update only the Container App image
+        id: deploy
+        shell: bash
+        env:
+          IMAGE_REF: ${{ steps.build.outputs.image_ref }}
+        run: |
+          set -euo pipefail
+
+          PREVIOUS_REVISION="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.latestRevisionName \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          test -n "$PREVIOUS_REVISION"
+
+          az containerapp update \
+            --subscription "$AZURE_SUBSCRIPTION_ID" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --name "$AZURE_CONTAINER_APP" \
+            --container-name "$AZURE_CONTAINER_NAME" \
+            --image "$IMAGE_REF" \
+            --output none \
+            --only-show-errors
+
+          NEW_REVISION=""
+
+          for ATTEMPT in $(seq 1 24); do
+            CANDIDATE_REVISION="$(
+              az containerapp show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --query properties.latestRevisionName \
+                --output tsv \
+                --only-show-errors
+            )"
+
+            CURRENT_IMAGE="$(
+              az containerapp show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --query "properties.template.containers[0].image" \
+                --output tsv \
+                --only-show-errors
+            )"
+
+            if [[ \
+              -n "$CANDIDATE_REVISION" && \
+              "$CANDIDATE_REVISION" != "$PREVIOUS_REVISION" && \
+              "$CURRENT_IMAGE" = "$IMAGE_REF" \
+            ]]; then
+              NEW_REVISION="$CANDIDATE_REVISION"
+              break
+            fi
+
+            echo "APP_UPDATE_READBACK_ATTEMPT_${ATTEMPT}=WAITING"
+            sleep 5
+          done
+
+          if [[ -z "$NEW_REVISION" ]]; then
+            echo "New Container App revision was not observed." >&2
+            exit 1
+          fi
+
+          echo "revision=$NEW_REVISION" >> "$GITHUB_OUTPUT"
+          echo "PREVIOUS_REVISION=$PREVIOUS_REVISION"
+          echo "NEW_REVISION=$NEW_REVISION"
+          echo "CONTAINER_APP_IMAGE_UPDATE=PASS"
+
+      - name: Wait for the exact new revision to provision
+        shell: bash
+        env:
+          IMAGE_REF: ${{ steps.build.outputs.image_ref }}
+          NEW_REVISION: ${{ steps.deploy.outputs.revision }}
+        run: |
+          set -euo pipefail
+
+          PROVISIONED=false
+
+          for ATTEMPT in $(seq 1 30); do
+            set +e
+            STATE="$(
+              az containerapp revision show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --revision "$NEW_REVISION" \
+                --query properties.provisioningState \
+                --output tsv \
+                --only-show-errors \
+                2>/dev/null
+            )"
+            READ_EXIT=$?
+            set -e
+
+            if [[ "$READ_EXIT" -ne 0 ]]; then
+              echo "REVISION_READ_ATTEMPT_${ATTEMPT}=WAITING"
+              sleep 5
+              continue
+            fi
+
+            ERROR_TEXT="$(
+              az containerapp revision show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --revision "$NEW_REVISION" \
+                --query properties.provisioningError \
+                --output tsv \
+                --only-show-errors
+            )"
+
+            RUNNING_STATE="$(
+              az containerapp revision show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --revision "$NEW_REVISION" \
+                --query properties.runningState \
+                --output tsv \
+                --only-show-errors
+            )"
+
+            REVISION_IMAGE="$(
+              az containerapp revision show \
+                --subscription "$AZURE_SUBSCRIPTION_ID" \
+                --resource-group "$AZURE_RESOURCE_GROUP" \
+                --name "$AZURE_CONTAINER_APP" \
+                --revision "$NEW_REVISION" \
+                --query "properties.template.containers[0].image" \
+                --output tsv \
+                --only-show-errors
+            )"
+
+            echo "REVISION_ATTEMPT_${ATTEMPT}=STATE:${STATE}:RUNNING:${RUNNING_STATE}"
+
+            if [[ -n "$ERROR_TEXT" && "$ERROR_TEXT" != "None" && "$ERROR_TEXT" != "null" ]]; then
+              echo "Revision provisioning error: $ERROR_TEXT" >&2
+              exit 1
+            fi
+
+            if [[ "$REVISION_IMAGE" != "$IMAGE_REF" ]]; then
+              echo "Revision image does not match the requested image." >&2
+              exit 1
+            fi
+
+            if [[ "$STATE" = "Provisioned" ]]; then
+              PROVISIONED=true
+              break
+            fi
+
+            if [[ "$STATE" = "Failed" || "$RUNNING_STATE" = "Failed" ]]; then
+              echo "Revision entered a failed state." >&2
+              exit 1
+            fi
+
+            sleep 10
+          done
+
+          test "$PROVISIONED" = "true"
+          echo "REVISION_PROVISIONING=PASS"
+
+      - name: Verify final app security and scale invariants
+        shell: bash
+        env:
+          IMAGE_REF: ${{ steps.build.outputs.image_ref }}
+          NEW_REVISION: ${{ steps.deploy.outputs.revision }}
+        run: |
+          set -euo pipefail
+
+          FINAL_REVISION="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.latestRevisionName \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          FINAL_IMAGE="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query "properties.template.containers[0].image" \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          MIN_REPLICAS="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.template.scale.minReplicas \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          MAX_REPLICAS="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.template.scale.maxReplicas \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          TARGET_PORT="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.configuration.ingress.targetPort \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          REGISTRY_IDENTITY="$(
+            az containerapp registry show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --server "$AZURE_ACR_SERVER" \
+              --query identity \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          REGISTRY_USERNAME="$(
+            az containerapp registry show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --server "$AZURE_ACR_SERVER" \
+              --query username \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          REGISTRY_PASSWORD_REF="$(
+            az containerapp registry show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --server "$AZURE_ACR_SERVER" \
+              --query passwordSecretRef \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          test "$FINAL_REVISION" = "$NEW_REVISION"
+          test "$FINAL_IMAGE" = "$IMAGE_REF"
+          test "$MIN_REPLICAS" = "0"
+          test "$MAX_REPLICAS" = "1"
+          test "$TARGET_PORT" = "3000"
+          test "${REGISTRY_IDENTITY,,}" = "system"
+          test -z "$REGISTRY_USERNAME"
+          test -z "$REGISTRY_PASSWORD_REF"
+
+          echo "FINAL_APP_INVARIANTS=PASS"
+
+      - name: Probe the live M1C application
+        id: probe
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          FQDN="$(
+            az containerapp show \
+              --subscription "$AZURE_SUBSCRIPTION_ID" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --name "$AZURE_CONTAINER_APP" \
+              --query properties.configuration.ingress.fqdn \
+              --output tsv \
+              --only-show-errors
+          )"
+
+          test -n "$FQDN"
+          LIVE_URL="https://${FQDN}"
+
+          HEALTH_JSON="$(
+            curl \
+              --fail \
+              --silent \
+              --show-error \
+              --retry 5 \
+              --retry-delay 10 \
+              --retry-all-errors \
+              --max-time 30 \
+              "${LIVE_URL}/api/health"
+          )"
+
+          export HEALTH_JSON
+
+          python3 - <<'PY'
+          import json
+          import os
+
+          payload = json.loads(os.environ["HEALTH_JSON"])
+
+          assert payload["service"] == "ajas-web"
+          assert payload["status"] == "ok"
+          assert payload["autonomousTerminalState"] == "READY_FOR_REVIEW"
+          assert payload["employerSystemCapability"] is False
+          PY
+
+          ROOT_FILE="$RUNNER_TEMP/ajas-root.html"
+          HERO_FILE="$RUNNER_TEMP/ajas-hero.svg"
+
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --retry 5 \
+            --retry-delay 10 \
+            --retry-all-errors \
+            --max-time 30 \
+            --output "$ROOT_FILE" \
+            "${LIVE_URL}/"
+
+          grep -Fq "Automated Job Application System" "$ROOT_FILE"
+          grep -Fq "Human-Only Submissions" "$ROOT_FILE"
+          grep -Fq "Job Search Agent" "$ROOT_FILE"
+
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --retry 5 \
+            --retry-delay 10 \
+            --retry-all-errors \
+            --max-time 30 \
+            --output "$HERO_FILE" \
+            "${LIVE_URL}/hero-mountain.svg"
+
+          grep -Fq "Abstract AJAS mountain and river landscape" "$HERO_FILE"
+
+          echo "live_url=$LIVE_URL" >> "$GITHUB_OUTPUT"
+          echo "LIVE_APPLICATION_PROBE=PASS"
+          echo "LIVE_URL=$LIVE_URL"
+
+      - name: Write credential-free deployment summary
+        shell: bash
+        env:
+          IMAGE_REF: ${{ steps.build.outputs.image_ref }}
+          IMAGE_DIGEST: ${{ steps.build.outputs.image_digest }}
+          NEW_REVISION: ${{ steps.deploy.outputs.revision }}
+          LIVE_URL: ${{ steps.probe.outputs.live_url }}
+        run: |
+          set -euo pipefail
+
+          {
+            echo "## AJAS personal-alpha deployment"
+            echo
+            echo "- Commit: \`$GITHUB_SHA\`"
+            echo "- Image: \`$IMAGE_REF\`"
+            echo "- Digest: \`$IMAGE_DIGEST\`"
+            echo "- Revision: \`$NEW_REVISION\`"
+            echo "- Live URL: $LIVE_URL"
+            echo "- OIDC: GitHub federated identity; no stored Azure credential"
+            echo "- Container App scale: min 0 / max 1"
+            echo "- Employer-system capability: false"
+          } >> "$GITHUB_STEP_SUMMARY"
