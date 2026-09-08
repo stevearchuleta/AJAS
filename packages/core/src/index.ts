@@ -61,3 +61,15 @@ export {
   type IdempotentVerticalSliceResult,
   type VerticalSliceDependencies,
 } from "./stage1/vertical-slice.js";
+
+// ============================================================
+// EXPOSE THE SHARED AUTH POLICY WITHOUT READING PRIVATE CONFIG.
+// AUTH EVENTS REMAIN A NODE-ONLY INTERNAL MODULE FOR NOW.
+// ============================================================
+export {
+  evaluatePersonalAlphaAdmission,
+  readPersonalAlphaConfiguration,
+  type PersonalAlphaConfiguration,
+  type PersonalAlphaDecision,
+  type PersonalAlphaDecisionCode,
+} from "./auth/personal-alpha-policy.js";
