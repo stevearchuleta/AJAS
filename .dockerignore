@@ -52,3 +52,21 @@ tests
 .vscode
 Thumbs.db
 .DS_Store
+# M2 AUTHENTICATION: EXCLUDE CREDENTIAL MATERIAL AT EVERY DIRECTORY DEPTH
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.ppk
+**/*.jks
+**/*.kdbx
+**/.npmrc
+**/.netrc
+**/.pgpass
+**/*credential*.json
+**/*credentials*.json
+**/*secret*.json
+**/*token*.json
+**/service-account*.json

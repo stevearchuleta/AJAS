@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: repositoryRoot,
   poweredByHeader: false,
   reactStrictMode: true,
+  // ========================================================
+  // PREVENT DEVELOPMENT REQUEST AND BROWSER LOG FORWARDING.
+  // APPLICATION AUTH EVENTS USE A SEPARATE FIXED-FIELD LOGGER.
+  // ========================================================
+  logging: false,
   async headers() {
     return [
       {
