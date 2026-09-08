@@ -540,6 +540,7 @@ export default function HomePage() {
           </nav>
 
           <p>Powered by Agentic AI. Guided by You. Built Through Trust.</p>
+          <p>Personal Alpha - source-to-live deployment verified.</p>
         </div>
       </footer>
     </>
