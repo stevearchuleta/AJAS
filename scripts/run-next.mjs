@@ -8,6 +8,8 @@ const result = spawnSync(process.execPath, [nextCli, ...nextArguments], {
   env: {
     ...process.env,
     NEXT_TELEMETRY_DISABLED: "1",
+    BETTER_AUTH_TELEMETRY: "0",
+    BETTER_AUTH_TELEMETRY_DEBUG: "0",
   },
   stdio: "inherit",
 });

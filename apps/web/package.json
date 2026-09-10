@@ -2,6 +2,7 @@
   "name": "@ajas/web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "node ../../scripts/run-next.mjs build",
     "dev": "node ../../scripts/run-next.mjs dev",
@@ -10,6 +11,7 @@
     "dev:auth-spike": "node ../../scripts/run-auth-spike.mjs"
   },
   "dependencies": {
+    "better-auth": "1.7.3",
     "next": "16.3.3",
     "react": "19.2.0",
     "react-dom": "19.2.0"
