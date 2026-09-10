@@ -43,6 +43,8 @@ const allowedDirectDependencies = new Set([
   "typescript",
   "typescript-eslint",
   "vitest",
+  // ADR-001: Better Auth 1.7.3 is the reviewed M2 authentication dependency.
+  "better-auth",
 ]);
 
 describe("Stage-0B dependency boundary", () => {

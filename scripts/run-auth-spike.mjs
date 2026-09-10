@@ -40,6 +40,8 @@ export function makeAuthSpikeLaunchPlan(environment, extraArguments) {
       ...environment,
       NODE_ENV: "development",
       NEXT_TELEMETRY_DISABLED: "1",
+      BETTER_AUTH_TELEMETRY: "0",
+      BETTER_AUTH_TELEMETRY_DEBUG: "0",
       AJAS_AUTH_SPIKE_LOOPBACK_LAUNCH: "1",
     },
   };
